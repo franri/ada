@@ -3,16 +3,13 @@ def mid(s, e):
 
 def binary_search(a, n):
     start = 0
-    end = len(a)
-    middle = mid(start, end)
-    while True:
+    end = len(a)-1
+    while start <= end:
+        middle = mid(start, end)
         if a[middle] == n:
             return middle
-        if start == end:
-            return 'Not Found'
         elif n < a[middle]:
             end = middle - 1
-            middle = mid(start, middle)
         elif n > a[middle]:
             start = middle + 1
-            middle = mid(middle, end)
+    return -1

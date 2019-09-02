@@ -20,7 +20,7 @@ class TestLab1(unittest.TestCase):
         self.assertEqual(binary_search(self.o, 51), 7)
         self.assertEqual(binary_search(self.o, 40), 6)
         self.assertFalse(binary_search(self.o, 51) == 2)
-        self.assertEqual(binary_search(self.o, 99), 'Not Found')
+        self.assertEqual(binary_search(self.o, 99), -1)
 
     def test_selection_sort(self):
         selection_sort(self.un_o)
