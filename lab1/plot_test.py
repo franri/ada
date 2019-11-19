@@ -7,7 +7,7 @@ from binary_search import binary_search
 from find_min import find_min
 from selection_sort import selection_sort
 
-max = 100000
+max = 100
 
 inputs = [10000 + 10000*i  for i in range(0, max)]
 
@@ -87,7 +87,39 @@ def ss():
     plt.ylabel('"Time"')
     plt.title('Selection Sort')
     plt.show()
+
+def bs_a_mano():
+    inputs = [10**3, 10**4, 10**5, 10**6, 10**7, 10**8, 10**9]
+    times = [None]*len(inputs)
+    for i, n in enumerate(inputs):
+        print(n)
+        arr = [1]*n
+        start = time.time()
+        binary_search(arr, -1)
+        end = time.time()
+        resta = end - start
+        times[i] = resta
+        print(resta)
+    plt.plot(times)
+    plt.xlabel('Inputs')
+    plt.ylabel('"Time"')
+    plt.title('Binary Search')
+    plt.show()
+
+    
+
 if __name__ == '__main__':
     # ss()
     # fm()
-    bs()
+    # bs()
+    bs_a_mano()
+
+# arr = [1]*1000000000
+
+# start = time.time()
+# binary_search(arr,1)
+# end = time.time()
+# print(start)
+# print(end)
+# resta = end - start
+# print(resta)
